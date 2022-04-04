@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mable-lp-demo-dev-svc
+  namespace: mable
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: mable-lp-demo-dev
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mable-lp-demo-dev-ingress
+  namespace: mable
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: lp-demo.mable.ai
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/issuer: "letsencrypt-prod"
+spec:
+  tls:
+  - hosts:
+    - lp-demo.mable.ai
+    secretName: mable-lp-demo-dev-tls
+  rules:
+  - host: lp-demo.mable.ai
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+             name: mable-lp-demo-dev-svc
+             port:
+               number: 80
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mable-lp-demo-dev
+  namespace: mable
+spec:
+  selector:
+    matchLabels:
+      app: mable-lp-demo-dev
+  template:
+    metadata:
+      labels:
+        app: mable-lp-demo-dev
+    spec:
+      containers:
+      - image: registry.gitlab.com/mableai/landingpage-demo:<VERSION>
+        name: mable-lp-demo-dev
+        ports:
+        - containerPort: 80
+          name: http
+      imagePullSecrets:
+      - name: mable-gitlab-registry

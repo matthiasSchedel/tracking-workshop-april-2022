@@ -1,0 +1,41 @@
+{
+  "GENERIC_ERROR": "Es ist ein Fehler aufgetreten. Bitte überprüfe deine Eingaben und versuche es erneut.",
+  "login": {
+    "title": "Login",
+    "button": "Einloggen",
+    "subTitle": "Bring your analytics to the next level!",
+    "email": {
+      "label": "E-Mail",
+      "placeholder": "email@example.com",
+      "errors": {
+        "required": "Bitte geben Sie Ihre Mail Addresse ein.",
+        "pattern": "Die eingetragene E-Mail Adresse ist nicht valide."
+      }
+    },
+    "password": {
+      "label": "Passwort",
+      "errors": {
+        "required": "Bitte geben Sie Ihr Passwort ein."
+      }
+    }
+  },
+  "register": {
+    "title": "Registrierung",
+    "button": "Jetzt registrieren",
+    "subTitle": "Registriere dich jetzt!",
+    "firstname": {
+      "label": "Vorname",
+      "placeholder": "Max",
+      "errors": {
+        "required": "Bitte geben Sie Ihren Vornamen ein."
+      }
+    },
+    "lastname": {
+      "label": "Nachname",
+      "placeholder": "Mustermann",
+      "errors": {
+        "required": "Bitte geben Sie Ihren Nachnamen ein."
+      }
+    }
+  }
+}
