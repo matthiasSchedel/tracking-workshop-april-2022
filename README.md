@@ -4,6 +4,7 @@
 1. npm i -g angular-cli
 2. npm install
 3. ng serve
+
 visit => http://localhost:4200/
 
 
