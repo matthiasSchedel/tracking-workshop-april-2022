@@ -9,6 +9,6 @@ COPY deployment/nginx/default.conf /etc/nginx/conf.d/
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 
-ADD ./dist/mableai /usr/share/nginx/html
+ADD ./dist/superteststore /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]

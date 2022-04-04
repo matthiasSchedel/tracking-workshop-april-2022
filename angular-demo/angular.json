@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mableai": {
+    "superteststore": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -21,7 +21,7 @@
           "builder": "ngx-build-plus:browser",
           "options": {
             "extraWebpackConfig": "webpack.config.js",
-            "outputPath": "dist/mableai",
+            "outputPath": "dist/superteststore",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,10 +79,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "mableai:build:production"
+              "browserTarget": "superteststore:build:production"
             },
             "development": {
-              "browserTarget": "mableai:build:development"
+              "browserTarget": "superteststore:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,7 +91,7 @@
           "builder": "ngx-build-plus:extract-i18n",
           "options": {
             "extraWebpackConfig": "webpack.config.js",
-            "browserTarget": "mableai:build"
+            "browserTarget": "superteststore:build"
           }
         },
         "test": {
@@ -117,5 +117,5 @@
       }
     }
   },
-  "defaultProject": "mableai"
+  "defaultProject": "superteststore"
 }
